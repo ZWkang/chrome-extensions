@@ -8,20 +8,6 @@ function dytt(){
 }
 function mp4ba(){
 	if(window.location.host==='www.mp4ba.com'){
-		// var cs_left_couplet = document.getElementById("cs_left_couplet");
-		// var cs_right_couplet = document.getElementById("cs_right_couplet");
-		// var cs_right_bottom = document.getElementById("cs_right_bottom");
-		// cs_left_couplet.parentNode.removeChild(cs_left_couplet);
-		// cs_right_couplet.parentNode.removeChild(cs_right_couplet);
-		// var iframes = document.getElementsByTagName("iframe");
-		// for(var i=iframes.length-1;i>=0;i--){
-		// 	iframes[i].parentNode.removeChild(iframes[i]);
-		// }
-		// var ad_list_middle = document.getElementById("ad_list_middle");
-		// if (ad_list_middle!==undefined){
-		// 	ad_list_middle.parentNode.removeChild(ad_list_middle);
-		// }
-		// cs_right_bottom.parentNode.removeChild(cs_right_bottom);
 		$("#cs_left_couplet").remove();
 		$("#cs_right_couplet").remove();
 		$("#cs_right_bottom").remove();
