@@ -2,48 +2,221 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>demo1</title>
+	<script src="js/jquery-1.10.1.min.js"></script>
 	<style>
+	*,body{
+		padding: 0;
+		margin: 0;
 
-		#container{
-			width: 400px;
-			height: 200px;
-			border: 2px solid #000000;
-			padding: 10px 0px;
-		}
-		#container > h1{
+	}
+	body{
+		width: 800px;
+		height: 600px;
+	}
+	#main{
+		width: 100%;
+		height: 100%;
+		/*border:1px solid red;*/
+		padding: 20px 10px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+	}
+	#main-left{
+		width: 68%;
+		float: left;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+	}
+	#main-left > #main-page >div[class *= main-left-page] > p:first-child{
+		margin: 5px;
+		margin-right: 15px;
+	}
+	#main-left > #main-page > div[class *= main-left-page] > p:last-child{
+		margin: 5px;
+		margin-left: 15px;
+	}
+	#main-left > #main-page > div[class *= main-left-page] > p {
+		display: inline;
+		line-height: 1.5;
+	}
 
-			font-family: 华文行楷;
-			font-size: 46px;
-			color: rgba(41,128,135,0.9);
-			text-align: center;
+	#main-left > #main-page > div[class *= main-left-page] > p{	
+		font-size: 36px;
+		font-weight: bold;
+	}
+	#main-left > #main-page > div[class *= main-left-page] > span{
+		display: inline-block;
+		width: 0px;
+		height: 20px;
+		border: 5px solid #ccc;
+	}
+	#main-figure{
+		width: 2000%;
+		overflow: hidden;
+		margin-left: 0px;
+		margin: 0 0 0 0;
+	}
 
-		}
-		#container > a{
-			text-decoration: none;
-			color: rgba(41,128,135,0.9);
-			font-weight: 900;
-			font-size:  36px;
-			text-align: center;
-			display: block;
-		}
+	#show{
+		/*position: relative;*/
+		position: relative;
+		width: 510px;
+		overflow: hidden;
+		
+	}
+	.button-show{
+		position: absolute;
+		z-index: 500;
+		width: 100px;
+		height: 100px;
+		top: 30%;
+		font-size: 28px;
+		display: block;
+		cursor: pointer;
+		display: none;
+	}
+	#show > #show-left-content{
+		position: absolute;
+		width: 30%;
+		left: 0;
+		top: 0;
+		height: 100%;
+		cursor: pointer;
+	}
+	#show > #show-right-content{
+		position: absolute;
+		width: 30%;
+		right: 0;
+		top: 0;
+		height: 100%;
+		cursor: pointer;
 
+	}
+	#show > #show-left-content >#left-button{
+		left:3%;
+		background-color: rgba(220,220,220,0.5);
+		border-radius: 20px;
+	}
+	#show > #show-right-content > #right-button{
+		right:2%;
+		background-color: rgba(220,220,220,0.5);
+		border-radius: 20px;
+	}
+	#main-figure > div[class *= main-figure-page]{
+		width: 500px;
+		display: inline-block;
+		margin: 0 5px;
+		/*border:1px solid red;*/
+		float: left;
+		height: 350px;
+
+	}
+	#main-figure > div[class *= main-figure-page] > .main-left-content{
+		/*border:1px solid green;*/
+		width: 500px;
+		height: 100px;
+		
+	}
+	#main-figure > div[class *= main-figure-page] > .main-left-content:last-child{
+		/*height: 150px;*/
+	}
+	#main-figure > div[class *= main-figure-page] > .main-left-content >p:first-child{
+		font-size: 24px;
+		display: inline-block;
+		line-height: 1.4;
+		margin-bottom: -15px;
+		margin-right: 8px;
+	}
+	#main-figure > div[class *= main-figure-page] > .main-left-content > span{
+		display: inline-block;
+		width: 10px;
+		height: 20px;
+		background-color: #ccc;
+		/*padding: 0 10px;*/
+		line-height: 3;
+	}
+	#main-figure > div[class *= main-figure-page] > .main-left-content >p:last-child{
+		margin-top: 10px;
+		font-size: 28px;
+		height: 30px;
+		font-weight: bold;
+	}
+	#main-right{
+		width: 30%;
+		float: left;
+		padding:0px 10px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+	}
+	#main-right > div[class *=main-weather-page]{
+		margin-top: 15px;
+		position: relative;
+	}
+	#main-right > div[class *=main-weather-page]:first-child{
+		margin-top: 0px;
+	}
+	#main-right > div[class *=main-weather-page] >span{
+		display: inline-block;
+		font-size:20px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+		-webkit-box-sizing:border-box; /* Safari */
+		text-align: left;
+		width: 0px;
+		height: 30px;
+		border:5px solid #ccc;
+		margin-right: 5px;
+	}
+	#main-right > div[class *=main-weather-page] >span::last-child{
+		margin-right: 0px;
+		padding-left: 5px;
+	}
+	#main-right > div[class *=main-weather-page] > img:first-child{
+		margin-right: 5px;
+	}
+	#main-right > div[class *=main-weather-page] > h3,
+	#main-right > div[class *=main-weather-page] > h4,
+	#main-right > div[class *=main-weather-page] > img{
+		margin-top: 10px;
+		margin-right: 5px;
+	}
 	</style>
-	<script src="js/popup.js">
-
-	</script>
 </head>
 <body>
-	
-	<div id="container">
-		<h1>
-			周文康
-		</h1>
-		<a href="https://github.com/ZWkang" target="_blank">
-			GITHUB
-		</a>
+	<div id="main">
+		<div id="main-left">
+			<div id="main-page">
+
+			</div>
+			<div id="show">
+				<div id="show-left-content">
+					<div id="left-button" class="button-show">
+					</div>
+				</div>
+				<div id="show-right-content">
+					<div id="right-button" class="button-show">
+					</div>
+				</div>
+				<div id="main-figure">
+				</div>
+			</div>
+		</div>
+		<div id="main-right">
+<!-- 			<div class="main-weather-page-1">
+				<h3>周六 10月15</h3>
+				<h4>温度:31 ~ 21℃</h4>
+				<h4>天气:多云</h4>
+				<h4>风向:东北风3-4级</h4>
+				<img src="http://api.map.baidu.com/images/weather/day/qing.png" alt="">
+				<img src="http://api.map.baidu.com/images/weather/day/qing.png" alt="">
+			</div> -->
+
+		</div>
 	</div>
-
-
+<script src="js/mainpro.js"></script>
 </body>
 </html>

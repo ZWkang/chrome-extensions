@@ -2,20 +2,30 @@
 	"name":"广告屏蔽",
 	"version":"1.0",
 	"manifest_version": 2,
-	"description": "一些广告屏蔽22!!!",
+	"description": "一些广告屏蔽!!!",
 	"icons":{"16":"icon_16.png","48":"icon_48.png","128":"icon_128.png"},
 	// "background_page": "background.html", 
 	"content_scripts": [
 	{
-	 "matches": ["http://*/","https://*/","http://www.ygdy8.net/*"],
-	 		"js": ["js/jquery-1.10.1.min.js","js/test.js"]}
+	 "matches": [
+	 		"http://*/",
+	 		"https://*/",
+	 		"http://*/*",
+	 		"https://*/*"],
+	 		"js": [
+	 			"./js/jquery-1.10.1.min.js",
+	 			"./js/test.js",
+	 			"./js/mainpro.js"
+	 		]
+	 }
 	 		],
 	"browser_action": {"default_icon": "icon_16.png","default_popup":"./popup.html"},
 	"permissions": [
 	    	"http://*/",
 	    	"http://*/*",
 	    	"https://*/",
-	    	"https://*/*"
+	    	"https://*/*",
+	    	"tabs"
   	]
   	// ,"chrome_url_overrides":{"newtab":}
   }
